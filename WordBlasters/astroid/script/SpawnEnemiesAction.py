@@ -54,82 +54,82 @@ class SpawnEnemiesAction(UpdateAction):
         # letter = random.randint(1,26)
 
         if letter == "A": # A
-            enemy = "astroid/assets/Asteroid_letters/A.png"
+            enemy = "WordBlasters/astroid/assets/Asteroid_letters/A.png"
             self.letter_string = "A"
         elif letter == "B": # B
-            enemy = "astroid/assets/Asteroid_letters/B.png"
+            enemy = "WordBlasters/astroid/assets/Asteroid_letters/B.png"
             self.letter_string = "B"
         elif letter == "C": # C
-            enemy = "astroid/assets/Asteroid_letters/C.png"
+            enemy = "WordBlasters/astroid/assets/Asteroid_letters/C.png"
             self.letter_string = "C"
         elif letter == "D": # D
-            enemy = "astroid/assets/Asteroid_letters/D.png"
+            enemy = "WordBlasters/astroid/assets/Asteroid_letters/D.png"
             self.letter_string = "D"
         elif letter == "E": # E
-            enemy = "astroid/assets/Asteroid_letters/E.png"
+            enemy = "WordBlasters/astroid/assets/Asteroid_letters/E.png"
             self.letter_string = "E"
         elif letter == "F": # F
-            enemy = "astroid/assets/Asteroid_letters/F.png"
+            enemy = "WordBlasters/astroid/assets/Asteroid_letters/F.png"
             self.letter_string = "F"
         elif letter == "G": # G
-            enemy = "astroid/assets/Asteroid_letters/G.png"
+            enemy = "WordBlasters/astroid/assets/Asteroid_letters/G.png"
             self.letter_string = "G"
         elif letter == "H": # H
-            enemy = "astroid/assets/Asteroid_letters/H.png"
+            enemy = "WordBlasters/astroid/assets/Asteroid_letters/H.png"
             self.letter_string = "H"
         elif letter == "I": # I
-            enemy = "astroid/assets/Asteroid_letters/I.png"
+            enemy = "WordBlasters/astroid/assets/Asteroid_letters/I.png"
             self.letter_string = "I"
         elif letter == "J": # J
-            enemy = "astroid/assets/Asteroid_letters/J.png"
+            enemy = "WordBlasters/astroid/assets/Asteroid_letters/J.png"
             self.letter_string = "J"
         elif letter == "K": # K
-            enemy = "astroid/assets/Asteroid_letters/K.png"
+            enemy = "WordBlasters/astroid/assets/Asteroid_letters/K.png"
             self.letter_string = "K"
         elif letter == "L": # L
-            enemy = "astroid/assets/Asteroid_letters/L.png"
+            enemy = "WordBlasters/astroid/assets/Asteroid_letters/L.png"
             self.letter_string = "L"
         elif letter == "M": # M
-            enemy = "astroid/assets/Asteroid_letters/M.png"
+            enemy = "WordBlasters/astroid/assets/Asteroid_letters/M.png"
             self.letter_string = "M"
         elif letter == "N": # N
-            enemy = "astroid/assets/Asteroid_letters/N.png"
+            enemy = "WordBlasters/astroid/assets/Asteroid_letters/N.png"
             self.letter_string = "N"
         elif letter == "O": # O
-            enemy = "astroid/assets/Asteroid_letters/O.png"
+            enemy = "WordBlasters/astroid/assets/Asteroid_letters/O.png"
             self.letter_string = "O"
         elif letter == "P": # P
-            enemy = "astroid/assets/Asteroid_letters/P.png"
+            enemy = "WordBlasters/astroid/assets/Asteroid_letters/P.png"
             self.letter_string = "P"
         elif letter == "Q": # Q
-            enemy = "astroid/assets/Asteroid_letters/Q.png"
+            enemy = "WordBlasters/astroid/assets/Asteroid_letters/Q.png"
             self.letter_string = "Q"
         elif letter == "R": # R
-            enemy = "astroid/assets/Asteroid_letters/R.png"
+            enemy = "WordBlasters/astroid/assets/Asteroid_letters/R.png"
             self.letter_string = "R"
         elif letter == "S": # S
-            enemy = "astroid/assets/Asteroid_letters/S.png"
+            enemy = "WordBlasters/astroid/assets/Asteroid_letters/S.png"
             self.letter_string = "S"
         elif letter == "T": # T
-            enemy = "astroid/assets/Asteroid_letters/T.png"
+            enemy = "WordBlasters/astroid/assets/Asteroid_letters/T.png"
             self.letter_string = "T"
         elif letter == "U": # U
-            enemy = "astroid/assets/Asteroid_letters/U.png"
+            enemy = "WordBlasters/astroid/assets/Asteroid_letters/U.png"
             self.letter_string = "U"
         elif letter == "V": # V
-            enemy = "astroid/assets/Asteroid_letters/V.png"
+            enemy = "WordBlasters/astroid/assets/Asteroid_letters/V.png"
             self.letter_string = "V"
         elif letter == "W": # W
-            enemy = "astroid/assets/Asteroid_letters/W.png"
+            enemy = "WordBlasters/astroid/assets/Asteroid_letters/W.png"
             self.letter_string = "W"
         elif letter == "X": # X
-            enemy = "astroid/assets/Asteroid_letters/X.png"
+            enemy = "WordBlasters/astroid/assets/Asteroid_letters/X.png"
             self.letter_string = "X"
         elif letter == "Y": # Y
-            enemy = "astroid/assets/Asteroid_letters/Y.png"
+            enemy = "WordBlasters/astroid/assets/Asteroid_letters/Y.png"
             self.letter_string = "Y"
         elif letter == "Z": # Z
-            enemy = "astroid/assets/Asteroid_letters/Z.png"
+            enemy = "WordBlasters/astroid/assets/Asteroid_letters/Z.png"
             self.letter_string = "Z"
 
         self.letter_cue.append([self.letter_string, y])

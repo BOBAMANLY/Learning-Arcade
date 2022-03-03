@@ -109,7 +109,7 @@ class WordBlasters:
         # ship_3.set_team("yellow")
         
         # Left
-        ship_4 = Ship(path="astroid/assets/spaceship/spaceship_red.png", 
+        ship_4 = Ship(path="WordBlasters/astroid/assets/spaceship/spaceship_red.png", 
                         width = 70,
                         height = 50,
                         x = self.W_SIZE[0]/10,
@@ -121,7 +121,7 @@ class WordBlasters:
 
         # Scale the background to have the same dimensions as the Window,
         # then position it at the center of the screen
-        background_image = Background("astroid/assets/space.png", 
+        background_image = Background("WordBlasters/astroid/assets/space.png", 
                                         width=self.W_SIZE[0],
                                         height=self.W_SIZE[1],
                                         x = self.W_SIZE[0]/2,
@@ -132,7 +132,7 @@ class WordBlasters:
         # play_box = Play_box("astroid/assets/play_box.png", width=W_SIZE[0]* .8, height=W_SIZE[1]* .8, x = W_SIZE[0]/2, y = W_SIZE[1]/2)
 
         # Start game button
-        start_button = StartGameButton(path="astroid/assets/others/start_button.png",
+        start_button = StartGameButton(path="WordBlasters/astroid/assets/others/start_button.png",
                                         width = 305,
                                         height = 113,
                                         x = self.W_SIZE[0]/2,

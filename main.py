@@ -2,7 +2,7 @@ import arcade
 
 from WordBlasters.main import WordBlasters
 SCREEN_WIDTH = 1000
-SCREEN_HEIGHT = 700
+SCREEN_HEIGHT = 1000
 SCREEN_TITLE = "Learning Arcade Main Menu"
 class MainMenu(arcade.Window):
     """

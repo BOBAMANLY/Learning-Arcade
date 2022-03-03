@@ -78,7 +78,7 @@ class HandleBulletsAstroidsCollision(UpdateAction):
             if collided_bullet != -1:
                 actors.remove_actor("bullets_4", collided_bullet)
                 actor.take_damage(1)
-                self._audio_service.play_sound("astroid/assets/sound/rock_cracking.wav", 0.1)
+                self._audio_service.play_sound("WordBlasters/astroid/assets/sound/rock_cracking.wav", 0.1)
                 self._score_2.add_score(1)
 
                 # If the astroid's hp gets down to 0, remove it, give score to the player,
@@ -86,4 +86,4 @@ class HandleBulletsAstroidsCollision(UpdateAction):
                     actors.remove_actor("astroids", actor)
                     if (self._score_2 != None):
                         self._score_2.add_score(actor.get_max_hp())
-                    self._audio_service.play_sound("astroid/assets/sound/explosion-01.wav", 0.1)
+                    self._audio_service.play_sound("WordBlasters/astroid/assets/sound/explosion-01.wav", 0.1)

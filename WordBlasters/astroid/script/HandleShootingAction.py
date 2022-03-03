@@ -70,7 +70,7 @@ class HandleShootingAction(InputAction):
            
             
             # Spawn bullet
-            bullet = Bullet("astroid/assets/bullet.png", 20, 30, x = bullet_x, y = bullet_y, vx = bullet_vx, vy = bullet_vy)
+            bullet = Bullet("WordBlasters/astroid/assets/bullet.png", 20, 30, x = bullet_x, y = bullet_y, vx = bullet_vx, vy = bullet_vy)
             # if name == "ship":
             #     actors.add_actor("bullets_1", bullet)
             # if name == "ship_2":
@@ -84,7 +84,7 @@ class HandleShootingAction(InputAction):
             bullet.set_rotation(rotation)
 
             # Play the shooting sound :)
-            self._audio_service.play_sound("astroid/assets/sound/bullet_shot.wav", 0.1)
+            self._audio_service.play_sound("WordBlasters/astroid/assets/sound/bullet_shot.wav", 0.1)
 
             # Record the time this bullet spawns
             self._last_bullet_spawn = time.time()
