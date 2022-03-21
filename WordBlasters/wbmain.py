@@ -173,7 +173,7 @@ class WordBlasters:
         startgame_actions = {"input" : [], "update" : [], "output": []}
         # startgame_actions["input"].append(HandleShootingAction(1, keyboard_service, audio_service))
         startgame_actions["input"].append(HandleShootingAction(1, keyboard_service, audio_service, spawn_enemies))
-        startgame_actions["input"].append(HandleShipMovementAction(2, keyboard_service))
+        # startgame_actions["input"].append(HandleShipMovementAction(2, keyboard_service))
         startgame_actions["update"].append(spawn_enemies)
         script.add_action("input", HandleStartGameAction(2, mouse_service, physics_service, startgame_actions))
 
