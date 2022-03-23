@@ -24,6 +24,10 @@ class MainMenu(arcade.Window):
         print(symbol)
 
 def main():
+    print("What game do you want to run? ")
+    print("1. Word Blasters")
+    print("2. Hangman")
+    print("3. Oasis")
     window = MainMenu()
     wb = threading.Thread(target = WordBlasters().run)
     wb.start()
