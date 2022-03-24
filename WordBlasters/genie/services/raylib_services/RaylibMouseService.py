@@ -49,14 +49,14 @@ class RaylibMouseService:
         # mouse_buttons_state = pygame.mouse.get_pressed(num_buttons=5)
         # return (mouse_buttons_state[button] + 1) % 2
 
-    def has_mouse_moved(self):
-        """
-            Looks at the movement of the mouse compared to the last frame:
-            If both x and y movements are 0, then the mouse has not moved.
-            Otherwise, the mouse has moved. Return a bool.
-        """
-        mouse_delta = get_mouse_delta()
-        return mouse_delta.x > 0 or mouse_delta.y > 0
+    # def has_mouse_moved(self):
+    #     """
+    #         Looks at the movement of the mouse compared to the last frame:
+    #         If both x and y movements are 0, then the mouse has not moved.
+    #         Otherwise, the mouse has moved. Return a bool.
+    #     """
+    #     mouse_delta = get_mouse_delta()
+    #     return mouse_delta.x > 0 or mouse_delta.y > 0
     
     def get_mouse_wheel_move(self):
         """
