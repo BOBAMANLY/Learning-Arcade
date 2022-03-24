@@ -62,3 +62,27 @@ def main():
     # window.show_view(game_view)
     arcade.run()
 main()
+
+
+
+# class ArcadeDemo(arcade.Window):
+#     def __init__(self):
+#         super().__init__(SCREEN_WIDTH, SCREEN_HEIGHT, SCREEN_TITLE)
+        
+#     @staticmethod
+#     def run():
+#         window = ArcadeDemo()
+#         arcade.run()
+
+# class RaylibDemo():
+#     @staticmethod
+#     def run():
+#         wb = threading.Thread(target = WordBlasters().run)
+#         wb.start()
+
+# def main():
+#     t1 = threading.Thread(target = ArcadeDemo.run)
+#     RaylibDemo.run()
+#     t1.start()
+
+# main()

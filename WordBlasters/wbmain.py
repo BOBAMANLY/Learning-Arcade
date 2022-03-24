@@ -10,7 +10,7 @@ from WordBlasters.astroid.cast.startGameButton import StartGameButton
 # from astroid.cast.play_box import Play_box
 
 from WordBlasters.astroid.script.HandleQuitAction import HandleQuitAction
-from WordBlasters.astroid.script.HandleShipMovementAction import HandleShipMovementAction
+# from WordBlasters.astroid.script.HandleShipMovementAction import HandleShipMovementAction
 from WordBlasters.astroid.script.HandleShootingAction import HandleShootingAction
 from WordBlasters.astroid.script.HandleStartGameAction import HandleStartGameAction
 
