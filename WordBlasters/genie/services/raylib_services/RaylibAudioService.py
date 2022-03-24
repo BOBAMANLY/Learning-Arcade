@@ -1,4 +1,4 @@
-from pyray import *
+from raylibpy import *
 
 class RaylibAudioService:
     def __init__(self):

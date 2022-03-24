@@ -1,4 +1,4 @@
-from pyray import *
+from raylibpy import *
 from WordBlasters.genie.cast.actor import Actor
 
 class RaylibPhysicsService:

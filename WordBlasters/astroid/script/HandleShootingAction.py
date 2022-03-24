@@ -1,5 +1,6 @@
 import time
 import math
+from raylibpy import *
 
 from WordBlasters.genie.script.action import InputAction
 from WordBlasters.genie.services import keys
@@ -14,7 +15,7 @@ ATTACK_INTERVAL = 0   # seconds
 LARGE_SIZE = (40, 55)
 
 class HandleShootingAction(InputAction):
-    def __init__(self, priority, keyboard_service, audio_service, spawn_enemies_action):
+    def __init__(self, priority, audio_service, spawn_enemies_action):
         super().__init__(priority)
         # self._ship = None
         # self._ship_2 = None
@@ -23,7 +24,7 @@ class HandleShootingAction(InputAction):
         self._last_bullet_spawn = time.time()  # seconds
         # self._last_bullet_dict = {'''"ship": self._last_bullet_spawn, "ship_2": self._last_bullet_spawn, "ship_3": self._last_bullet_spawn, '''"ship_4": self._last_bullet_spawn}
         self._last_bullet_dict = {"ship_4": self._last_bullet_spawn}
-        self._keyboard_service = keyboard_service
+        # self._keyboard_service = keyboard_service
         self._audio_service = audio_service
         self._window_size = (1000, 1000)
 
@@ -120,37 +121,11 @@ class HandleShootingAction(InputAction):
                 #         asteroid_targeted = True
                 #         asteroid_letter = target_asteroid.get_letter()
 
-                letters = {"A" : 44,
-                            "B" : 45,
-                            "C" : 46,
-                            "D" : 47,
-                            "E" : 48,
-                            "F" : 49,
-                            "G" : 50,
-                            "H" : 51,
-                            "I" : 52,
-                            "J" : 53,
-                            "K" : 54,
-                            "L" : 55,
-                            "M" : 56,
-                            "N" : 57,
-                            "O" : 58,
-                            "P" : 59,
-                            "Q" : 60,
-                            "R" : 61,
-                            "S" : 62,
-                            "T" : 63,
-                            "U" : 64,
-                            "V" : 65,
-                            "W" : 66,
-                            "X" : 67,
-                            "Y" : 68,
-                            "Z" : 69,
-                            "BACKSLASH" : 39}
+                letters = {"A" : 65, "B" : 66, "C" : 67, "D" : 68, "E" : 69, "F" : 70, "G" : 71, "H" : 72, "I" : 73, "J" : 74, "K" : 75, "L" : 76, "M" : 77, "N" : 78, "O" : 79, "P" : 80, "Q" : 81, "R" : 82, "S" : 83, "T" : 84, "U" : 85, "V" : 86, "W" : 87, "X" : 88, "Y" : 89, "Z" : 90, "BACKSLASH": 92}
 
                 letter_number = letters[asteroid_letter]
                 
-                if (self._keyboard_service.is_key_down(letter_number) and self._ship_4 != None):
+                if (is_key_down(letter_number) and self._ship_4 != None):
                     self.round += 1
                     # pos_1 = LARGE_SIZE[0] * 3
                     # pos_2 = self._window_size[1] / 3
@@ -200,7 +175,7 @@ class HandleShootingAction(InputAction):
                         self.spawn_enemies_action.cue_delete_top()
                     
 
-                elif (self._keyboard_service.is_key_down(letters["BACKSLASH"]) and self._ship_4 != None):
+                elif (is_key_down(letters["BACKSLASH"]) and self._ship_4 != None):
                     if closest_astroid_start_y == self._window_size[1] / 2:
                         self._spawn_bullet(clock, actors, 10, 0, self._ship_4, self._ship_4.get_rotation(), "ship_4") # Done
                         # closest_astroid.set_has_missle(True)

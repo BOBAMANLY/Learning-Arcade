@@ -1,4 +1,4 @@
-from pyray import *
+from raylibpy import *
 from WordBlasters.genie.services.constants.mouse import *
 
 """
@@ -7,14 +7,14 @@ from WordBlasters.genie.services.constants.mouse import *
     such mouse buttons.
 """
 mouse_map = {
-    LEFT : MOUSE_BUTTON_LEFT,      # index for Left mouse
-    MIDDLE : MOUSE_BUTTON_MIDDLE,    # index for Middle mouse
-    RIGHT : MOUSE_BUTTON_RIGHT,     # index for Right mouse
+    LEFT : MOUSE_LEFT_BUTTON, 
+    MIDDLE : MOUSE_MIDDLE_BUTTON,    # index for Middle mouse
+    RIGHT : MOUSE_RIGHT_BUTTON,     # index for Right mouse
 
     # If mouse has more than 3 buttons:
-    EXTRA1 : MOUSE_BUTTON_EXTRA,
+    # EXTRA1 : MOUSE_EXTRA_BUTTON,
     
-    SIDE : MOUSE_BUTTON_SIDE,
-    FORWARD : MOUSE_BUTTON_FORWARD,
-    BACK : MOUSE_BUTTON_BACK
+    # SIDE : MOUSE_BUTTON_SIDE,
+    # FORWARD : MOUSE_BUTTON_FORWARD,
+    # BACK : MOUSE_BUTTON_BACK
 }

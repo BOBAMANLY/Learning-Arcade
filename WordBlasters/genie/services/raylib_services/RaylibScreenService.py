@@ -1,5 +1,5 @@
-from pyray import *
-from raylib.colors import *
+from raylibpy import *
+# from raylib.colors import *
 import math
 
 from WordBlasters.genie.cast.actor import Actor
@@ -142,70 +142,70 @@ class RaylibScreenService:
         else:
             draw_text(text, int(position[0]), int(position[1]), font_size, color)
 
-    def draw_rectangle(self, center : tuple, width : int, height: int, color : tuple = (0, 0, 0), 
-                        border_width : int = 0, roundness : float = 0):
-        """
-            Draw a rectangle.
+    # def draw_rectangle(self, center : tuple, width : int, height: int, color : tuple = (0, 0, 0), 
+    #                     border_width : int = 0, roundness : float = 0):
+    #     """
+    #         Draw a rectangle.
 
-            Input:
-                - center: An (x, y) tuple indicating the center of the rectangle
-                - width: the width of the rectangle
-                - height: the height of the rectangle
-                - color: An RGB tuple. (0,0,0) is BLACK, and (255,255,255) is WHITE
-                        You can also pass a 4 entries tuple. the 4th entry determines opacity
-                - border_width: how many pixels you want the border to be
+    #         Input:
+    #             - center: An (x, y) tuple indicating the center of the rectangle
+    #             - width: the width of the rectangle
+    #             - height: the height of the rectangle
+    #             - color: An RGB tuple. (0,0,0) is BLACK, and (255,255,255) is WHITE
+    #                     You can also pass a 4 entries tuple. the 4th entry determines opacity
+    #             - border_width: how many pixels you want the border to be
                 
-                - border_radius, border_..._radius: use these parameters if you want your rectangle
-                                     to have rounded corners.
-                                        + values < 1 means squared corners
-                                        + values >= 1 means rounded corners. Increase this
-                                            to increase the roundness
-        """
-        topleft_x, topleft_y = center[0] - width/2, center[1] - height/2
+    #             - border_radius, border_..._radius: use these parameters if you want your rectangle
+    #                                  to have rounded corners.
+    #                                     + values < 1 means squared corners
+    #                                     + values >= 1 means rounded corners. Increase this
+    #                                         to increase the roundness
+    #     """
+    #     topleft_x, topleft_y = center[0] - width/2, center[1] - height/2
     
-        if border_width == 0:
-            draw_rectangle_rounded(Rectangle(topleft_x, topleft_y, width, height), roundness, 60, color)
-        elif border_width > 0:
-            draw_rectangle_rounded_lines(Rectangle(topleft_x, topleft_y, width, height), roundness, 60, border_width, color)
+    #     if border_width == 0:
+    #         draw_rectangle_rounded(Rectangle(topleft_x, topleft_y, width, height), roundness, 60, color)
+    #     elif border_width > 0:
+    #         draw_rectangle_rounded_lines(Rectangle(topleft_x, topleft_y, width, height), roundness, 60, border_width, color)
     
-    def draw_circle(self, center, radius, color : tuple = (0, 0, 0), width : int = 0,
-                    draw_top_right : bool = False, draw_top_left : bool = False, draw_bottom_left : bool = False, 
-                    draw_bottom_right : bool = False):
-        """
-            Draw a circle.
+    # def draw_circle(self, center, radius, color : tuple = (0, 0, 0), width : int = 0,
+    #                 draw_top_right : bool = False, draw_top_left : bool = False, draw_bottom_left : bool = False, 
+    #                 draw_bottom_right : bool = False):
+    #     """
+    #         Draw a circle.
 
-            Input:
-                - center: A tuple represents center of the circle (x, y)
-                - radius: Well...
-                - color: RGB tuple (0,0,0) is BLACK, (255,255,255) is WHITE.
-                        Can also use 4th entry to specify opacity
-                - width: How bold you want the border of the circle to be
-                        0: filled circle
-                        >0: empty circle with visible boundry line of 1px
+    #         Input:
+    #             - center: A tuple represents center of the circle (x, y)
+    #             - radius: Well...
+    #             - color: RGB tuple (0,0,0) is BLACK, (255,255,255) is WHITE.
+    #                     Can also use 4th entry to specify opacity
+    #             - width: How bold you want the border of the circle to be
+    #                     0: filled circle
+    #                     >0: empty circle with visible boundry line of 1px
 
-                - draw_top_..., draw_bottom_...: Boolean. Use these parameters if want to draw
-                    only parts of the circle (top left, top right, bottom left, bottom right)
-        """
-        sectors_key = (draw_top_right, draw_top_left, draw_bottom_left, draw_bottom_right)
-        angles_data = circle_sectors_dict[sectors_key]
-        separated_quads = isinstance(angles_data[0], tuple)
+    #             - draw_top_..., draw_bottom_...: Boolean. Use these parameters if want to draw
+    #                 only parts of the circle (top left, top right, bottom left, bottom right)
+    #     """
+    #     sectors_key = (draw_top_right, draw_top_left, draw_bottom_left, draw_bottom_right)
+    #     angles_data = circle_sectors_dict[sectors_key]
+    #     separated_quads = isinstance(angles_data[0], tuple)
 
-        if width == 0:
-            if separated_quads:
-                draw_circle_sector(Vector2(center[0], center[1]), radius, angles_data[0][0], angles_data[0][1], 60, color)
-                draw_circle_sector(Vector2(center[0], center[1]), radius, angles_data[1][0], angles_data[1][1], 60, color)
-            else:
-                draw_circle_sector(Vector2(center[0], center[1]), radius, angles_data[0], angles_data[1], 60, color)
-        elif width > 0:
-            if sectors_key == (True, True, True, True) or sectors_key == (False, False, False, False):
-                equiv_rec = Rectangle(center[0] - radius, center[1] - radius, 2*radius, 2*radius)
-                draw_rectangle_rounded_lines(equiv_rec, 1, 60, width, color)
-            # For now, if only part of the circle is drawn, "width" will be ignored
-            elif separated_quads:
-                draw_circle_sector_lines(Vector2(center[0], center[1]), radius, angles_data[0][0], angles_data[0][1], 60, color)
-                draw_circle_sector_lines(Vector2(center[0], center[1]), radius, angles_data[1][0], angles_data[1][1], 60, color)
-            else:
-                draw_circle_sector_lines(Vector2(center[0], center[1]), radius, angles_data[0], angles_data[1], 60, color)
+    #     if width == 0:
+    #         if separated_quads:
+    #             draw_circle_sector(Vector2(center[0], center[1]), radius, angles_data[0][0], angles_data[0][1], 60, color)
+    #             draw_circle_sector(Vector2(center[0], center[1]), radius, angles_data[1][0], angles_data[1][1], 60, color)
+    #         else:
+    #             draw_circle_sector(Vector2(center[0], center[1]), radius, angles_data[0], angles_data[1], 60, color)
+    #     elif width > 0:
+    #         if sectors_key == (True, True, True, True) or sectors_key == (False, False, False, False):
+    #             equiv_rec = Rectangle(center[0] - radius, center[1] - radius, 2*radius, 2*radius)
+    #             draw_rectangle_rounded_lines(equiv_rec, 1, 60, width, color)
+    #         # For now, if only part of the circle is drawn, "width" will be ignored
+    #         elif separated_quads:
+    #             draw_circle_sector_lines(Vector2(center[0], center[1]), radius, angles_data[0][0], angles_data[0][1], 60, color)
+    #             draw_circle_sector_lines(Vector2(center[0], center[1]), radius, angles_data[1][0], angles_data[1][1], 60, color)
+    #         else:
+    #             draw_circle_sector_lines(Vector2(center[0], center[1]), radius, angles_data[0], angles_data[1], 60, color)
 
     def draw_actor(self, actor: Actor):
         """

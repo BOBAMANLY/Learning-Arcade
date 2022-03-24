@@ -47,7 +47,7 @@ class WordBlasters:
             Get the game services
         """
         return {
-        "keyboard" : RaylibKeyboardService(),
+        # "keyboard" : RaylibKeyboardService(),
         "physics" : RaylibPhysicsService(),
         "screen" : RaylibScreenService(self.W_SIZE, self.SCREEN_TITLE),
         "audio" : RaylibAudioService(),
@@ -61,7 +61,7 @@ class WordBlasters:
         # Get all the services needed services 
         services = self.get_services()
 
-        keyboard_service = services["keyboard"]
+        # keyboard_service = services["keyboard"]
         physics_service = services["physics"]
         screen_service = services["screen"]
         audio_service = services["audio"]
@@ -165,14 +165,17 @@ class WordBlasters:
         script = Script()
 
         # Create input actions
-        script.add_action("input", HandleQuitAction(1, keyboard_service))
+        # script.add_action("input", HandleQuitAction(1, keyboard_service))
+        script.add_action("input", HandleQuitAction(1))
+
 
         spawn_enemies = SpawnEnemiesAction(1, self.W_SIZE, levels_dict, level)
 
         # Add actions that must be added to the script when the game starts
         startgame_actions = {"input" : [], "update" : [], "output": []}
         # startgame_actions["input"].append(HandleShootingAction(1, keyboard_service, audio_service))
-        startgame_actions["input"].append(HandleShootingAction(1, keyboard_service, audio_service, spawn_enemies))
+        startgame_actions["input"].append(HandleShootingAction(1, audio_service, spawn_enemies))
+        # startgame_actions["input"].append(HandleShootingAction(1, keyboard_service, audio_service, spawn_enemies))
         # startgame_actions["input"].append(HandleShipMovementAction(2, keyboard_service))
         startgame_actions["update"].append(spawn_enemies)
         script.add_action("input", HandleStartGameAction(2, mouse_service, physics_service, startgame_actions))

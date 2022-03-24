@@ -1,4 +1,5 @@
-from pyray import *
+
+from raylibpy import *
 from WordBlasters.genie.services.raylib_services.constants.keys import keys_map
 
 class RaylibKeyboardService():
