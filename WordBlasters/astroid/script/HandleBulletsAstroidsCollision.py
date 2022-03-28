@@ -1,4 +1,5 @@
 from WordBlasters.genie.script.action import UpdateAction
+import winsound
 
 class HandleBulletsAstroidsCollision(UpdateAction):
     def __init__(self, priority, physics_service, audio_service):

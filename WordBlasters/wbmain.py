@@ -32,7 +32,7 @@ from WordBlasters.astroid.script.DrawScoreAction import DrawScoreAction
 # from astroid.script.powerups.HandleRespawnPowerup import HandleBulletPowerupCollision
 class WordBlasters:
     def __init__(self):
-        self.W_SIZE = (1000, 700)
+        self.W_SIZE = (1000, 1000)
         self.START_POSITION = 200, 250
         self.SHIP_WIDTH = 40
         self.SHIP_LENGTH = 55
