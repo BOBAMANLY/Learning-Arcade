@@ -2,8 +2,11 @@
 
 import turtle
 import random
-
-def drawMan(x):
+class Hangman_game:
+    def __init__(self):
+        pass
+    
+    def drawMan(x):
         guess = x
         if guess == 1: 
             # draw head
@@ -60,11 +63,6 @@ def drawMan(x):
             turtle.right(120)
             turtle.forward(60)
             turtle.penup()
-            
-class Hangman_game:
-    def __init__(self):
-        pass
-            
     def run(self):
 
         # initialize turtle
@@ -72,7 +70,7 @@ class Hangman_game:
         turtle.speed(0)
         turtle.pensize(2)
 
-        wordbank = ['zombie', "cat", "dog", "train", "box", "turtle", "hangman"]
+        wordbank = ['zombie']
 
         bored = False
         while not bored:
